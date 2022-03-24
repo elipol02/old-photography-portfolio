@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Eli Pollack</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com"> 
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap">
+        <link rel="icon" type="image/png" sizes="32x32" href="other-images/favicon-32x32.png">
+        <script type="text/javascript">
+            var folder = "{{ data.folder }}"
+            var imageCount = "{{ data.imageCount }}"
+        </script>
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+
+    <body> 
+        <div id="menu"><ul>
+            <li><a href="#" class="button" onclick="loadImages(oregon)">Oregon</a></li>
+            <li><a href="#" class="button" onclick="loadImages(northcascades)">North Cascades</a></li>
+            <li><a href="#" class="button" onclick="loadImages(seattle)">Seattle</a></li>
+        </ul></div>
+        <div id="title"><ul>
+            <li><a href="#" class="button" onclick="loadImages(home)"><h1>Eli Pollack</h1></a></li>
+            <li><a href="https://www.youtube.com/channel/UCp6OZYbidIY7Q3UVG4rznBA" target="_blank"><img src="other-images/youtube.png"></a></li>
+            <li><a href="https://www.instagram.com/eli.pol_/" target="_blank"><img src="other-images/instagram.png"></a></li>
+            <li><a href="https://vsco.co/eli-pollack/gallery" target="_blank"><img src="other-images/vsco.png"></a></li>
+            <li><a href="#" class="button" onclick="menu()"><h5>Portfolio</h5></a></li>
+        </ul></div>
+        <div id="content">
+            <div class="row">
+                <div class="collumn">
+                    <div id="images"></div>
+                </div>
+                <div class="collumn">
+                    <div id="images2"></div>
+                </div>
+            </div>
+        </div>
+        </body>
+        <body onload="loadImages(home)"></body>
+    </body>
+</html>

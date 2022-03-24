@@ -1,0 +1,122 @@
+:root {
+    --baseSize: 10
+}
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+    overflow: hidden;
+  }
+
+a {
+    text-decoration: none;
+    display: inline;
+}
+
+li {
+    display: inline;
+    font-family: 'Oswald', sans-serif;
+}
+
+#title {
+    position: relative;
+}
+
+h1 {
+    margin: 20px 0px 20px 20px;
+    display: inline;
+    color: black;
+}
+
+h5 {
+    margin: 16px 20px;
+    float: right;
+    color: rgb(110, 110, 110);
+    font-size: 16px;
+    text-decoration: none;
+    border: none;
+    background-color: white;
+}
+
+li img {
+    margin-left: 12px;
+    width: 20px;
+    height: 20px;
+}
+
+#menu {
+    position: relative;
+    display: none;
+    padding:5px 0px 5px;
+    width: 100%;
+    background-color: rgb(145, 145, 145);
+    text-align: center;
+} 
+
+#menu a {
+    padding: 5%;
+    color: white;
+    font-size: 10;
+}
+
+/* Animations for opening and closing the menu */
+.animate {
+    animation: slide 200ms;
+}
+
+.animateReverse {
+    animation: slide 200ms reverse;
+}
+
+@keyframes slide{
+    0%{top: -30px}
+    100%{top: 0px}
+}
+
+/* Responsive design - Makes menu vertical */
+@media screen and (max-width: 600px) {
+    #menu {padding:10px 0px 10px}
+    #menu a {display:block; padding: 5px}
+    @keyframes slide{
+        0%{top: -120px}
+        100%{top: 0px}
+    }
+}
+
+/* Makes two equal collumns of images */
+#content {
+    position: relative;
+}
+.row img {
+    width: 100%;
+    position: relative;
+    padding: 3px 6px;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 6px;
+}
+
+.column {
+    flex: 25%;
+    max-width: 25%;
+  }
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+/* Responsive design - Makes a one collumn layout */
+@media (min-width: 860px) {
+    .collumn {
+        flex: 50%;
+        max-width: 50%;
+    }
+}
