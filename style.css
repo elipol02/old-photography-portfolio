@@ -103,20 +103,22 @@ li img {
     padding: 0 6px;
 }
 
-.column {
-    flex: 25%;
-    max-width: 25%;
+.collumn {
+    flex: 50%;
+    max-width: 50%;
   }
 
-.column img {
+.collumn img {
     margin-top: 8px;
     vertical-align: middle;
 }
 
 /* Responsive design - Makes a one collumn layout */
-@media (min-width: 860px) {
+@media (max-width: 860px) {
     .collumn {
-        flex: 50%;
-        max-width: 50%;
+        flex: 100%;
+        max-width: 100%;
     }
 }
+
+/* Single picture mode
