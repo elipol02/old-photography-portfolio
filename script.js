@@ -45,7 +45,7 @@ function loadImages(portfolio){
         }
     }
     //resets picture mode
-    if (singlePictureMode = true){
+    if (singlePictureMode == true){
         singlePicture(i, imageCount);
     }
 }
@@ -57,20 +57,24 @@ function singlePicture(i, imageCount){
             document.getElementById(j).style.display = "none";
         }
         document.getElementById(i).style.display = "inline";
-        const nodeList = document.querySelectorAll(".collumn");
-        for (let j = 0; j < nodeList.length; j++){
-            nodeList[j].style.flex = "100%";
-            nodeList[j].style.maxWidth = "100%";
+        if (window.innerWidth >= 860){
+            const nodeList = document.querySelectorAll(".collumn");
+            for (let j = 0; j < nodeList.length; j++){
+                nodeList[j].style.flex = "100%";
+                nodeList[j].style.maxWidth = "100%";
+            }
         }
         singlePictureMode = true;
     }else{
         for (let j=1; j<= imageCount; j++){
             document.getElementById(j).style.display = "inline";
         }
-        const nodeList = document.querySelectorAll(".collumn");
-        for (let j = 0; j < nodeList.length; j++){
-            nodeList[j].style.flex = "50%";
-            nodeList[j].style.maxWidth = "50%";
+        if (window.innerWidth >= 860){
+            const nodeList = document.querySelectorAll(".collumn");
+            for (let j = 0; j < nodeList.length; j++){
+                nodeList[j].style.flex = "50%";
+                nodeList[j].style.maxWidth = "50%";
+            }
         }
         singlePictureMode = false;
     }

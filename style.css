@@ -106,7 +106,7 @@ li img {
 .collumn {
     flex: 50%;
     max-width: 50%;
-  }
+}
 
 .collumn img {
     margin-top: 8px;
@@ -120,5 +120,3 @@ li img {
         max-width: 100%;
     }
 }
-
-/* Single picture mode
