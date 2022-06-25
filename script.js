@@ -1,8 +1,10 @@
 // image portfolio arrays
-const home = [1,13];
+const home = ["home",21];
+const northcascades = [1,10];
 const oregon = [2,8];
-const northcascades = [3,10];
-const seattle = [4,7];
+const seattle = [3,7];
+const italy = [4, 7]
+const film = ["film",6]
 
 //toggles
 var menuVisibility = false;
@@ -79,6 +81,17 @@ function singlePicture(i, imageCount){
         singlePictureMode = false;
     }
 }
+/*
+ideas for going between pictures:
+    arrows on left and right, clicking them will move 
+    forward or backwards an image 
+    (by calling single picture with the next image)
+    
+    using "onmousemove" and "onscroll" in images to show arrows
+    arrows will hide when there is no movement
+
+    https://www.tutorialrepublic.com/codelab.php?topic=faq&file=css-overlay-one-div-over-another-div
+*/
 
 // Toggles menu bar and its smooth animation
 function menu(){
