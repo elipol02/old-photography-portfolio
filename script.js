@@ -1,10 +1,11 @@
 // image portfolio arrays
-const home = ["home",21];
+const home = ["home",22];
 const northcascades = [1,10];
 const oregon = [2,8];
 const seattle = [3,7];
-const italy = [4, 7]
-const film = ["film",6]
+const italy = [4, 7];
+const banff = [5, 5];
+const film = ["film",10];
 
 //toggles
 var menuVisibility = false;
