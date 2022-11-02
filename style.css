@@ -58,8 +58,9 @@ li img {
     text-align: center;
 } 
 
+/* decrease padding when adding more portfolios */
 #menu a {
-    padding: 5%;
+    padding: 4%;
     color: white;
     font-size: 10;
 }
@@ -83,7 +84,7 @@ li img {
     #menu {padding:10px 0px 10px}
     #menu a {display:block; padding: 5px}
     @keyframes slide{
-        0%{top: -120px}
+        0%{top: -210px}
         100%{top: 0px}
     }
 }
