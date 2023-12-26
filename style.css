@@ -1,5 +1,5 @@
 :root {
-    --baseSize: 10
+    --baseSize: 10;
 }
 
 * {
@@ -11,6 +11,7 @@
 ul {
     list-style-type: none;
     overflow: hidden;
+    margin-top: 20px;
   }
 
 a {
@@ -28,16 +29,16 @@ li {
 }
 
 h1 {
-    margin: 20px 0px 20px 20px;
+    margin: 0px 0px 20px 20px;
     display: inline;
     color: black;
 }
 
 h5 {
-    margin: 16px 20px;
+    margin: 15px 20px;
     float: right;
     color: rgb(110, 110, 110);
-    font-size: 16px;
+    font-size: 20px;
     text-decoration: none;
     border: none;
     background-color: white;
@@ -45,8 +46,8 @@ h5 {
 
 li img {
     margin-left: 12px;
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
 }
 
 #menu {
@@ -58,11 +59,32 @@ li img {
     text-align: center;
 } 
 
+/* text overlay*/
+#bigmenu a {
+    position: relative;
+    display: inline-block;
+}
+
+.text-overlay {
+    position: absolute;
+    bottom: -3%; /* Adjust as needed to vertically center the text */
+    left: 0; /* Extend to the left side */
+    right: 0; /* Extend to the right side */
+    transform: translateY(-50%); /* Center the text perfectly */
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background color */
+    color: white; /* Text color */
+    padding: 5px 0px; /* Adjust padding as needed */
+    text-align: center; /* Center text horizontally */
+    box-sizing: border-box; /* Include padding and border in the width */
+    font-size: 35px;
+    font-family: 'Oswald', sans-serif;
+  }
+
 /* decrease padding when adding more portfolios */
 #menu a {
     padding: 4%;
     color: white;
-    font-size: 10;
+    font-size: 16px;
 }
 
 /* Animations for opening and closing the menu */
@@ -90,28 +112,31 @@ li img {
 }
 
 /* Makes two equal collumns of images */
-#content {
+#content{
     position: relative;
 }
 .row img {
     width: 100%;
     position: relative;
-    padding: 3px 6px;
 }
 .row {
     display: flex;
     flex-wrap: wrap;
-    padding: 0 6px;
+    padding: 0 5px;
 }
 
 .collumn {
     flex: 50%;
     max-width: 50%;
+    position: relative;
+    padding: 5px;
 }
 
 .collumn img {
     margin-top: 8px;
-    vertical-align: middle;
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* Responsive design - Makes a one collumn layout */

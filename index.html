@@ -17,22 +17,44 @@
     </head>
 
     <body> 
+        <!--title and menu-->
         <div id="menu"><ul>
-            <li><a href="#" class="button" onclick="loadImages(oregon)">Oregon</a></li>
-            <li><a href="#" class="button" onclick="loadImages(northcascades)">North Cascades</a></li>
-            <li><a href="#" class="button" onclick="loadImages(seattle)">Seattle</a></li>
-            <li><a href="#" class="button" onclick="loadImages(italy)">Italy</a></li>
-            <li><a href="#" class="button" onclick="loadImages(banff)">Banff</a></li>
+            <li><a href="#" class="button" onclick="loadImages(year2019)">2019</a></li>
+            <li><a href="#" class="button" onclick="loadImages(year2020)">2020</a></li>
+            <li><a href="#" class="button" onclick="loadImages(year2021)">2021</a></li>
+            <li><a href="#" class="button" onclick="loadImages(year2022)">2022</a></li>
+            <li><a href="#" class="button" onclick="loadImages(year2023)">2023</a></li>
             <li><a href="#" class="button" onclick="loadImages(film)">Film</a></li>
+            <li><a href="#" class="button" onclick="loadImages(portraits)">Portraits</a></li>
         </ul></div>
         <div id="title"><ul>
-            <li><a href="#" class="button" onclick="loadImages(home)"><h1>Eli Pollack</h1></a></li>
-            <li><a href="https://www.youtube.com/channel/UCp6OZYbidIY7Q3UVG4rznBA" target="_blank"><img src="other-images/youtube.png"></a></li>
-            <li><a href="https://www.instagram.com/eli.pol_/" target="_blank"><img src="other-images/instagram.png"></a></li>
-            <li><a href="https://vsco.co/eli-pollack/gallery" target="_blank"><img src="other-images/vsco.png"></a></li>
-            <li><a href="#" class="button" onclick="menu()"><h5>Portfolio</h5></a></li>
+            <li><a href="#" class="button" onclick="loadImages(home)"><h1>Elijah Pollack</h1></a></li>
+            <li><a href="https://www.instagram.com/elijahspollack/" target="_blank"><img src="other-images/instagram.png"></a></li>
+            <li><a href="#" class="button" onclick="menu()"><h5>Menu</h5></a></li>
         </ul></div>
+        
         <div id="content">
+            <!--home page menu-->
+            <div id="bigmenu">
+                <div class="row">
+                    <div class="collumn">
+                        <a href="#" class="button" onclick="loadImages(year2023)"><img src="image-folders/2023/1.jpg"><span class="text-overlay">2023</span></a>
+                    </div><div class="collumn">
+                        <a href="#" class="button" onclick="loadImages(year2022)"><img src="image-folders/2022/1.jpg"><span class="text-overlay">2022</span></a>
+                    </div><div class="collumn">
+                        <a href="#" class="button" onclick="loadImages(year2021)"><img src="image-folders/2021/1.jpg"><span class="text-overlay">2021</span></a>
+                    </div><div class="collumn">
+                        <a href="#" class="button" onclick="loadImages(year2020)"><img src="image-folders/2020/1.jpg"><span class="text-overlay">2020</span></a>
+                    </div><div class="collumn">
+                        <a href="#" class="button" onclick="loadImages(year2019)"><img src="image-folders/2019/thumbnail.jpg"><span class="text-overlay">2019</span></a>
+                    </div><div class="collumn">
+                        <a href="#" class="button" onclick="loadImages(portraits)"><img src="image-folders/portraits/3.jpg"><span class="text-overlay">Portraits</span></a>
+                    </div><div class="collumn">
+                        <a href="#" class="button" onclick="loadImages(film)"><img src="image-folders/film/7.jpg"><span class="text-overlay">Film</span></a>
+                    </div>
+                </div>
+            </div>
+            <!--pictures-->
             <div class="row">
                 <div class="collumn">
                     <div id="images"></div>

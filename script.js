@@ -1,11 +1,13 @@
 // image portfolio arrays
-const home = ["home",22];
-const northcascades = [1,10];
-const oregon = [2,8];
-const seattle = [3,7];
-const italy = [4, 7];
-const banff = [5, 5];
+const year2019 = ["2019",11];
+const year2020 = ["2020",6];
+const year2021 = ["2021",8];
+const year2022 = ["2022",18];
+const year2023 = ["2023", 7];
 const film = ["film",10];
+const portraits = ["portraits", 5];
+const home = ["home", 0];
+var scrollLast = 0;
 
 //toggles
 var menuVisibility = false;
@@ -20,42 +22,52 @@ function loadImages(portfolio){
     console.log(menuVisibility);
     if (menuVisibility == true){
         menu();
+    }
+
+    if (portfolio == home){
+        //shows big menu
+        document.getElementById("bigmenu").style.display = "inline";
         console.log("1");
-    }
-    //gets portfolio information
-    const imageCount = portfolio[1];
-    const folder = portfolio[0];
-    //creates array of image names and appends to collumns
-    var images = [];
-    var a = [];
-    var divs = [];
-    var i;
-    for (i=1; i<= imageCount; i++){
-        images[i] = document.createElement("img"); 
-        images[i].src = "image-folders/" + folder + "/" + i + ".jpg";
-        a[i] = document.createElement("a");
-        a[i].href = "#";
-        a[i].setAttribute("class", "button");
-        a[i].setAttribute("onClick", "singlePicture(" + i + ", " + imageCount + ")");
-        a[i].appendChild(images[i]);
-        divs[i] = document.createElement("div");
-        divs[i].id = i;
-        divs[i].appendChild(a[i]);
-        if (i <= imageCount/2){
-            document.getElementById("images").appendChild(divs[i]);
-        }else{
-            document.getElementById("images2").appendChild(divs[i]);
+    }else{
+        //hides big menu
+        document.getElementById("bigmenu").style.display = "none";
+        //gets portfolio information
+        const imageCount = portfolio[1];
+        const folder = portfolio[0];
+        //creates array of image names and appends to collumns
+        var images = [];
+        var a = [];
+        var divs = [];
+        var i;
+        for (i=1; i<= imageCount; i++){
+            images[i] = document.createElement("img"); 
+            images[i].src = "image-folders/" + folder + "/" + i + ".jpg";
+            a[i] = document.createElement("a");
+            a[i].href = "#";
+            a[i].setAttribute("class", "button");
+            a[i].setAttribute("onClick", "singlePicture(" + i + ", " + imageCount + ")");
+            a[i].appendChild(images[i]);
+            divs[i] = document.createElement("div");
+            divs[i].id = i;
+            divs[i].appendChild(a[i]);
+            if (i <= imageCount/2){
+                document.getElementById("images").appendChild(divs[i]);
+            }else{
+                document.getElementById("images2").appendChild(divs[i]);
+            }
         }
-    }
-    //resets picture mode
-    if (singlePictureMode == true){
-        singlePicture(i, imageCount);
+        //resets picture mode
+        if (singlePictureMode == true){
+            singlePicture(i, imageCount);
+        }
+        console.log("2");
     }
 }
 
 //toggles single picture mode
 function singlePicture(i, imageCount){
     if (singlePictureMode == false){
+        scrollLast = window.scrollY || document.documentElement.scrollTop;
         for (let j=1; j<= imageCount; j++){
             document.getElementById(j).style.display = "none";
         }
@@ -80,6 +92,9 @@ function singlePicture(i, imageCount){
             }
         }
         singlePictureMode = false;
+        setTimeout(function () {
+            window.scrollTo(0, scrollLast);
+        },1);
     }
 }
 /*
@@ -106,7 +121,7 @@ function menu(){
             document.getElementById("menu").classList.remove("animate");
             document.getElementById("title").classList.remove("animate");
             document.getElementById("content").classList.remove("animate");
-        },200)
+        },190)
     }else{
         document.getElementById("menu").classList.add("animateReverse");
         document.getElementById("title").classList.add("animateReverse");
@@ -117,6 +132,6 @@ function menu(){
             document.getElementById("title").classList.remove("animateReverse");
             document.getElementById("content").classList.remove("animateReverse");
             document.getElementById("menu").style.display = "none";
-        },200)
+        },190)
     }
 }
