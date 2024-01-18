@@ -80,6 +80,23 @@ li img {
     font-family: 'Oswald', sans-serif;
   }
 
+/* arrow */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 75px;
+    height: 100px;
+}
+
+.rightArrow {
+    right: 0%;
+}
+
+.leftArrow {
+    left: 0%;
+}
+
 /* decrease padding when adding more portfolios */
 #menu a {
     padding: 4%;

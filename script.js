@@ -1,9 +1,10 @@
 // image portfolio arrays
 const year2019 = ["2019",11];
 const year2020 = ["2020",6];
-const year2021 = ["2021",8];
-const year2022 = ["2022",18];
+const year2021 = ["2021",10];
+const year2022 = ["2022",19];
 const year2023 = ["2023", 7];
+const year2024 = ["2024", 3];
 const film = ["film",10];
 const portraits = ["portraits", 5];
 const home = ["home", 0];
@@ -66,11 +67,17 @@ function loadImages(portfolio){
 
 //toggles single picture mode
 function singlePicture(i, imageCount){
-    if (singlePictureMode == false){
+    if (singlePictureMode == false){ //turns on
+
+        //records scroll
         scrollLast = window.scrollY || document.documentElement.scrollTop;
+
+        //hides images
         for (let j=1; j<= imageCount; j++){
             document.getElementById(j).style.display = "none";
         }
+
+        //shows selected image, adjusts css
         document.getElementById(i).style.display = "inline";
         if (window.innerWidth >= 860){
             const nodeList = document.querySelectorAll(".collumn");
@@ -80,7 +87,33 @@ function singlePicture(i, imageCount){
             }
         }
         singlePictureMode = true;
-    }else{
+/*
+        //makes arrows
+        var leftimg = document.createElement("img");
+        var rightimg = document.createElement("img");
+
+        leftimg.src = "other-images/Arrow left.png"
+        rightimg.src = "other-images/Arrow right.png"
+
+        var left = document.createElement("a");
+        var right = document.createElement("a");
+
+        left.setAttribute("class", "leftArrow arrow");
+        right.setAttribute("class", "rightArrow arrow");
+
+        left.href="#";
+        right.href="#";
+
+        left.setAttribute("onClick", "nextPicture(" + i, + "," + imageCount + ", left)");
+        right.setAttribute("onClick", "nextPicture(" + i, + "," + imageCount + ", right)");
+
+        left.appendChild(leftimg);
+        right.appendChild(rightimg);
+
+        document.getElementById(i).appendChild(left);
+        document.getElementById(i).appendChild(right);
+*/
+    }else{ // turns off
         for (let j=1; j<= imageCount; j++){
             document.getElementById(j).style.display = "inline";
         }
@@ -92,10 +125,22 @@ function singlePicture(i, imageCount){
             }
         }
         singlePictureMode = false;
+/*
+        //removes arrows
+        var elements = document.getElementsByClassName("arrow");
+        var elementsArray = Array.from(elements);
+        for (var i = 0; i < elementsArray.length; i++) {
+            elementsArray[i].remove();
+        }
+*/
         setTimeout(function () {
             window.scrollTo(0, scrollLast);
         },1);
     }
+}
+
+function nextPicture(i, imageCount, direction){
+
 }
 /*
 ideas for going between pictures:
